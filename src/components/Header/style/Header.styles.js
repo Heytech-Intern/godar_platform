@@ -22,7 +22,39 @@ const Wrap = styled.div`
   flex-flow: row-reverse;
 `;
 
-const Nav = styled.nav`
+const MenuWrap = styled(Wrap)`
+  flex-flow: row;
+  justify-content: start;
+  max-width: 100%;
+  @media (min-width: ${({ theme }) => theme.Device.pc}) {
+    max-width: 1202px;
+  } ;
+`;
+
+const AddressWrap = styled(Wrap)`
+  flex-flow: row;
+  justify-content: start;
+  & > ul {
+    display: flex;
+  }
+  & > ul > li {
+    font-weight: 400;
+    font-size: 14px;
+    color: ${({ theme }) => theme.TextColors.Tertiary};
+    line-height: 24px;
+    padding: 0 10px;
+  }
+  & > p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: ${({ theme }) => theme.TextColors.Tertiary};
+    padding-right: 10px;
+    border-right: 2px solid ${({ theme }) => theme.TextColors.Tertiary};
+  }
+`;
+
+const ItemImg = styled.nav`
   display: flex;
   direction: ltr;
   & > img:nth-of-type(1) {
@@ -59,4 +91,45 @@ const ItemText = styled.div`
   }
 `;
 
-export { StyledHeader, Container, Nav, Profile, Wrap, ItemText };
+const QuickMenu = styled.div`
+  width: 100%;
+  height: 63px;
+  background: white;
+`;
+
+const Vector = styled.div`
+  justify-content: center;
+  width: 80px;
+  display: flex;
+`;
+
+const Nav = styled.nav`
+  width: 721px;
+  & > ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  & > ul > li > a {
+    color: ${({ theme }) => theme.TextColors.secondary};
+    font-weight: 500;
+  }
+`;
+
+const AddressBar = styled.div`
+  margin: 18px 0px;
+`;
+
+export {
+  StyledHeader,
+  Container,
+  Nav,
+  ItemImg,
+  Profile,
+  Wrap,
+  ItemText,
+  QuickMenu,
+  Vector,
+  MenuWrap,
+  AddressBar,
+  AddressWrap,
+};
