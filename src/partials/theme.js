@@ -19,3 +19,4 @@ export const theme = {
     pc: "1600px",
   },
 };
+
