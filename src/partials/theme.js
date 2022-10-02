@@ -12,5 +12,11 @@ export const theme = {
   },
   TextColors: {
     primary: "#FFFFFF",
+    secondary: "#014d40",
+    Tertiary: "#7c8594",
+  },
+  Device: {
+    pc: "1600px",
   },
 };
+

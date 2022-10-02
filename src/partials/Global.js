@@ -36,5 +36,13 @@ li {
 a {
   text-decoration: none;
 }
+
+@font-face {
+  font-family: 'IRANSans';
+  src: local('IRANSans'),
+   url("./font/Iranian-Sans.ttf") format("truetype");
+  font-weight: normal;
+  }
   
   `;
+
