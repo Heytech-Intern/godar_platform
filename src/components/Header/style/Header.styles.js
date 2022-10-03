@@ -101,6 +101,10 @@ const Vector = styled.div`
   justify-content: center;
   width: 80px;
   display: flex;
+  @media (min-width: ${({ theme }) => theme.Device.pc}) {
+    justify-content: start;
+    padding-right: 10px;
+  } ;
 `;
 
 const Nav = styled.nav`
@@ -133,4 +137,3 @@ export {
   AddressBar,
   AddressWrap,
 };
-
