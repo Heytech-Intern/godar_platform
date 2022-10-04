@@ -5,10 +5,10 @@ export const theme = {
     body: "#E3E3E3",
   },
   BtnColors: {
-    primary:
-      "linear-gradient(265.29deg, #00AA8E 61.27%, #019C86 82.68%, #038175 100%)",
+    primary: "#00AA8D",
     secondary: "#FFFFFF",
     Tertiary: "##D50000",
+    delet: "#D50000",
   },
   TextColors: {
     primary: "#FFFFFF",
@@ -19,4 +19,3 @@ export const theme = {
     pc: "1600px",
   },
 };
-
