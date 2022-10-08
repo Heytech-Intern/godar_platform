@@ -11,11 +11,11 @@ export const Main = () => {
       <div>
         <GlobalStyles />
         <Header />
-        <ListData
+        {/* <ListData
           hasCheckbox={true}
           titleData={titleData}
           bodyData={bodyData}
-        />
+        /> */}
       </div>
     </ThemeProvider>
   );
