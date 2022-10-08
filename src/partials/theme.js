@@ -14,9 +14,9 @@ export const theme = {
     primary: "#FFFFFF",
     secondary: "#014d40",
     Tertiary: "#7c8594",
+    Title: "#3E3F44",
   },
   Device: {
     pc: "1600px",
   },
 };
-
