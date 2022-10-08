@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Table = styled.section`
   width: 1240px;
-  margin: 200px auto;
+  margin: auto;
+  margin-top: 12px;
   background-color: ${({ theme }) => theme.BgColors.frames};
 `;
 
@@ -72,6 +73,7 @@ const ListBody = styled.section`
   margin: auto;
   /* background: linear-gradient( 90deg, rgba(234,234,238,0.4) 0%, rgba(234,234,238,0.4) 100% ); */
   border-radius: 8px 8px 0px 0px;
+  padding-bottom: 24px;
 `;
 
 const Orders = styled.div`
@@ -146,6 +148,19 @@ const Tools = styled.ul`
   }
 `;
 
+const Topic = styled.div`
+  margin: auto;
+  width: 1080px;
+  padding-top: 18px;
+  padding-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const TopicWrapper = styled(Topic)`
+  justify-content: left;
+`;
+
 export {
   Table,
   Header,
@@ -161,4 +176,6 @@ export {
   Name,
   Specifications,
   Tools,
+  Topic,
+  TopicWrapper,
 };
