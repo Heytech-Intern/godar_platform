@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.section`
-  height: 74px;
+  height: auto;
   width: 100%;
-  background-color: ${({ theme }) => theme.BgColors.header};
+  margin-bottom: 18px;
 `;
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
+`;
+
+const Wrapper = styled.div`
+  background-color: ${({ theme }) => theme.BgColors.header};
+  width: 100%;
+  height: 74px;
 `;
 
 const Wrap = styled.div`
@@ -136,5 +142,5 @@ export {
   MenuWrap,
   AddressBar,
   AddressWrap,
+  Wrapper,
 };
-
