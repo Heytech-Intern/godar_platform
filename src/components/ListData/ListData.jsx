@@ -1,4 +1,6 @@
 import React from "react";
+import { GroupOprationBtn } from "../../partials/button";
+import NavigationBar from "../NavigationBar/NavigationBar";
 import {
   Table,
   Header,
@@ -14,13 +16,20 @@ import {
   Name,
   Specifications,
   Tools,
+  Topic,
+  TopicWrapper,
 } from "./style/ListData.style";
-import { GlobalStyles } from "../../partials/Global";
 
 const ListData = ({ hasCheckbox, titleData, bodyData }) => {
   return (
     <Table>
-      <GlobalStyles />
+      <Topic>
+        <GroupOprationBtn>
+          اعمال عملیات گروهی
+          <img src="./assets/Button/arrow-down.svg" alt="arrowDown" />
+        </GroupOprationBtn>
+        <NavigationBar />
+      </Topic>
       <Header>
         <Title>
           <div>
@@ -99,6 +108,9 @@ const ListData = ({ hasCheckbox, titleData, bodyData }) => {
           })}
         </Orders>
       </ListBody>
+      <TopicWrapper>
+        <NavigationBar />
+      </TopicWrapper>
     </Table>
   );
 };

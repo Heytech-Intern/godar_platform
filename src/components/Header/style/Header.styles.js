@@ -21,7 +21,7 @@ const Wrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1202px;
+  max-width: 1240px;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -33,7 +33,7 @@ const MenuWrap = styled(Wrap)`
   justify-content: start;
   max-width: 100%;
   @media (min-width: ${({ theme }) => theme.Device.pc}) {
-    max-width: 1202px;
+    max-width: 1240px;
   } ;
 `;
 
