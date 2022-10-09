@@ -5,9 +5,10 @@ import SelectBox from "../SelectBox/SelectBox";
 import StatusBar from "../StatusBar/StatusBar";
 import FilteredTags from "../FilteredTags/FilteredTags";
 import RemoveFilterButton from "../RemoveFilterButton/RemoveFilterButton";
-import NavigationBar from "../NavigationBar/NavigationBar";
+import NavigationBar from "../../NavigationBar/NavigationBar";
 import TableActionButton from "../TableActionButton/TableActionButton";
-import Grid from "../grid";
+import ListData from "../../ListData/ListData";
+import { titleData, bodyData } from "../../../partials/channelData";
 
 import {
   Container,
@@ -18,7 +19,6 @@ import {
   Tag,
   Flex,
 } from "./style/ChannelManage.style";
-import { HEADER_DATA, GRID_DATA } from "../grid/channelManage";
 
 const ChannelManage = () => {
   const [isActive, setIsActive] = useState(false);
@@ -137,7 +137,7 @@ const ChannelManage = () => {
             </span>
             <span>
               <img
-                src="./assets/ChannelManage/refresh.svg"
+                src="./assets/ChannelManage/refrsh.svg"
                 alt="refresh-image-icon"
               />
             </span>
@@ -254,10 +254,10 @@ const ChannelManage = () => {
           <NavigationBar />
         </Flex>
         <Flex table>
-          <Grid
-            className="table-margin"
-            headerData={HEADER_DATA}
-            bodyData={GRID_DATA}
+          <ListData
+            hasCheckbox={true}
+            titleData={titleData}
+            bodyData={bodyData}
           />
         </Flex>
         <Flex className="bottom-nav">
