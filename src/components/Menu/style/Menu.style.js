@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.section`
   float: left;
-  margin-top: 111px;
+  margin-top: 30px;
   display: flex;
   flex-flow: column;
   align-items: center;

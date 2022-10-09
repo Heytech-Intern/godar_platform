@@ -3,7 +3,9 @@ import styled from "styled-components";
 const Table = styled.section`
   width: 1240px;
   margin: auto;
+  border-radius: 8px;
   margin-top: 12px;
+  margin-bottom: 12px;
   background-color: ${({ theme }) => theme.BgColors.frames};
 `;
 
@@ -142,9 +144,6 @@ const Tools = styled.ul`
   justify-content: center;
   & > img:nth-of-type(2) {
     padding: 0 15px;
-  }
-  & > img:nth-of-type(3) {
-    display: ${(props) => (props.hasTrash === true ? "block" : "none")};
   }
 `;
 
