@@ -39,7 +39,6 @@ const Active = styled.p`
 const Box = styled.div`
   display: flex;
   align-items: center;
-  cursor: pointer;
   font-family: "IRANSans";
   & > .text {
     color: #3e3f44de;
@@ -56,6 +55,7 @@ const Box = styled.div`
     align-items: center;
     margin-right: 14px;
     font-family: "IRANSans";
+    cursor: pointer;
   }
 `;
 
@@ -71,6 +71,7 @@ const Select = styled.div`
   align-items: center;
   margin-right: 8px;
   font-family: "IRANSans";
+  cursor: pointer;
 
   & > p {
     color: #3e3f44de;

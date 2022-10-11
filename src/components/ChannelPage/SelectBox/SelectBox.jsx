@@ -1,15 +1,33 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import { Container, Tag } from './style/SelectBox.style'
+import { selectBoxInit } from '../../../partials/channel-initial-state'
 
 const SelectBox = () => {
+  const [selected, setSelected] = useState(selectBoxInit)
+
+  const removeSelectedHandler = (id) =>{
+    const cloneSelected = [...selected];
+    const newSelected = cloneSelected.filter((item, index) => index !== id);
+
+    setSelected(newSelected);
+  }
+  
   return (
     <Container>
         <div className='tag'>
-            <Tag> <p>SYSTEM</p> <img src="./assets/ChannelManage/remove.svg" alt="" /></Tag>
-            <Tag> <p>INQUERY</p> <img src="./assets/ChannelManage/remove.svg" alt="" /></Tag>
+          {
+            selected.map((item,index) => {
+              return (
+                  <Tag key={index}> 
+                    <p>{item.title}</p> 
+                    <img onClick={() => removeSelectedHandler(index)} src="./assets/ChannelManage/remove.svg" alt="remove-icon" />
+                  </Tag>
+              )
+            })
+          }
         </div>
-        <img className='drop-down' src="./assets/ChannelManage/down.svg" alt="" />
+        <img className='drop-down' src="./assets/ChannelManage/down.svg" alt="drop-down-icon" />
 
     </Container>
   )

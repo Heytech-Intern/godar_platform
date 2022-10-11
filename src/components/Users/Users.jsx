@@ -10,7 +10,6 @@ import {
 } from "./style/Users.style";
 import ListData from "../ListData/ListData";
 import { titleData, bodyData } from "../../partials/data";
-import WarningModal from "../../partials/warningModal/WarningModal";
 
 export const Users = () => {
   const [activeFilter, setActiveFilter] = useState(true);
@@ -65,7 +64,6 @@ export const Users = () => {
         )}
       </Container>
       <ListData hasCheckbox={true} titleData={titleData} bodyData={bodyData} />
-      <WarningModal />
     </>
   );
 };

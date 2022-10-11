@@ -13,18 +13,29 @@ import {
   Orders,
   OrderList,
   Menu,
-  Name,
   Specifications,
   Tools,
   Topic,
   TopicWrapper,
+  Div,
+  Condition,
 } from "./style/ListData.style";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "../../partials/deleteModal/DeleteModal";
+import WarningModal from "../../partials/warningModal/WarningModal";
 
 const ListData = ({ hasCheckbox, titleData, bodyData }) => {
   const location = useLocation();
   const [activeModal, setActiveModal] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const handleActive = () => {
+    setActiveModal((prevActiveModal) => !prevActiveModal);
+  };
+  const handleConfirm = () => {
+    setIsClicked((previsClicked) => !previsClicked);
+    setActiveModal(false);
+  };
+
   return (
     <>
       <Table>
@@ -41,18 +52,27 @@ const ListData = ({ hasCheckbox, titleData, bodyData }) => {
         )}
         <Header>
           <Title>
-            <div>
+            <Div>
               <Checkbox
                 hasCheckbox={hasCheckbox}
                 src={"/assets/ListData/checked.svg"}
               />
-            </div>
+            </Div>
             <Row>
               {titleData.map((title, index) => (
-                <Flex key={index}>
-                  {title.parametrs.map((Link, items) => {
-                    return <List key={items}>{Link.name}</List>;
-                  })}
+                <Flex location={location} key={index}>
+                  {title.parametrs.map((Link, items) => (
+                    <>
+                      {location.pathname === "/channelmanage" ? (
+                        <List key={items}>
+                          {Link.name}
+                          {Link.condition}
+                        </List>
+                      ) : (
+                        <List key={items}>{Link.name}</List>
+                      )}
+                    </>
+                  ))}
                 </Flex>
               ))}
             </Row>
@@ -75,7 +95,7 @@ const ListData = ({ hasCheckbox, titleData, bodyData }) => {
                             : { background: "rgba(255, 255, 255, 1)" }
                         }
                       >
-                        <div>
+                        <Div>
                           <Checkbox
                             hasCheckbox={hasCheckbox}
                             src={
@@ -85,25 +105,44 @@ const ListData = ({ hasCheckbox, titleData, bodyData }) => {
                             }
                             alt="checked"
                           />
-                        </div>
-                        <Name key={items}>
-                          <li>{Link.name}</li>
-                        </Name>
-                        <Specifications>
-                          <li>{Link.nationalcode}</li>
-                          <li>{Link.username}</li>
-                          <li>{Link.data}</li>
-                          <li>{Link.registery}</li>
-                          <li
-                            style={
-                              Link.checked === "true"
-                                ? { color: "rgba(45, 165, 45, 1)" }
-                                : { color: "rgba(213, 0, 0, 1)" }
-                            }
-                          >
-                            {Link.condition}
-                          </li>
-                        </Specifications>
+                        </Div>
+                        <Row key={items}>
+                          <Specifications location={location}>
+                            <li>{Link.name}</li>
+                            <li>{Link.nationalcode}</li>
+                            <li>{Link.username}</li>
+                            <li>{Link.data}</li>
+                            <li
+                              style={
+                                location.pathname === "/channelmanage"
+                                  ? { fontSize: "9px" }
+                                  : { fontSize: "11px" }
+                              }
+                            >
+                              {Link.registery}
+                            </li>
+                            <Condition
+                              style={
+                                Link.checked === "true"
+                                  ? { color: "rgba(45, 165, 45, 1)" }
+                                  : { color: "rgba(213, 0, 0, 1)" }
+                              }
+                            >
+                              {Link.condition}
+                            </Condition>
+                            {location.pathname === "/channelmanage" ? (
+                              <Condition
+                                style={
+                                  Link.checked === "true"
+                                    ? { color: "rgba(45, 165, 45, 1)" }
+                                    : { color: "rgba(213, 0, 0, 1)" }
+                                }
+                              >
+                                {Link.deleteCondition}
+                              </Condition>
+                            ) : null}
+                          </Specifications>
+                        </Row>
                         <Tools>
                           <img src={Link.handler} alt="handler" />
                           <img src={Link.editor} alt="editor" />
@@ -111,11 +150,7 @@ const ListData = ({ hasCheckbox, titleData, bodyData }) => {
                             ""
                           ) : (
                             <img
-                              onClick={() =>
-                                setActiveModal(
-                                  (prevactiveModal) => !prevactiveModal,
-                                )
-                              }
+                              onClick={handleActive}
                               src={Link.trash}
                               alt="trash"
                             />
@@ -137,10 +172,17 @@ const ListData = ({ hasCheckbox, titleData, bodyData }) => {
           </TopicWrapper>
         )}
       </Table>
-      {activeModal && <DeleteModal />}
+      {activeModal && (
+        <DeleteModal
+          setActiveModal={setActiveModal}
+          handleConfirm={handleConfirm}
+        />
+      )}
+      {isClicked && (
+        <WarningModal isClicked={isClicked} setIsClicked={setIsClicked} />
+      )}
     </>
   );
 };
 
 export default ListData;
-

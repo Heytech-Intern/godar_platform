@@ -59,6 +59,7 @@ export const DeletButton = styled.button`
   border-radius: 4px;
   border: none;
   color: white;
+  cursor: pointer;
 `;
 
 export const RefuseButton = styled.button`
@@ -66,4 +67,5 @@ export const RefuseButton = styled.button`
   height: 36px;
   color: rgba(62, 63, 68, 0.4);
   border: none;
+  cursor: pointer;
 `;
