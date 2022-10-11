@@ -26,7 +26,7 @@ export const Img = styled.img`
 `;
 export const Txt = styled.img`
   width: 28px;
-  height: 8px;
+  height: 28px;
   margin: auto;
   display: block;
 `;
@@ -63,4 +63,5 @@ export const Button = styled.button`
   border-radius: 4px;
   margin-top: 6px;
   background: none;
+  cursor: pointer;
 `;

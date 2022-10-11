@@ -40,14 +40,17 @@ const FilterList = styled.ul`
     & > img:nth-of-type(1) {
       width: 24px;
       height: 24px;
+      cursor: pointer;
     }
     & > img:nth-of-type(2) {
       width: 24px;
       height: 26px;
+      cursor: pointer;
     }
     & > img:nth-of-type(3) {
       width: 22px;
       height: 22px;
+      cursor: pointer;
     }
   }
   & > li:nth-of-type(2) {

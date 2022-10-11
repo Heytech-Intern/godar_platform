@@ -23,6 +23,13 @@ const Header = styled.div`
 const Title = styled.div`
   display: flex;
   height: 48px;
+  width: 100%;
+  align-items: center;
+`;
+
+const Div = styled.div`
+  height: 100%;
+  display: flex;
   align-items: center;
 `;
 
@@ -36,34 +43,26 @@ const Checkbox = styled.img`
 
 const Row = styled.div`
   display: flex;
+  width: 100px;
+  height: 100%;
+  flex: 0 0 80%;
 `;
 
 const Flex = styled.ul`
-  display: flex;
+  display: grid;
+  grid-template-columns: ${(props) =>
+    props.location.pathname === "/channelmanage"
+      ? "80px 82px 70px 65px 75px 68px 68px"
+      : "90px 80px 70px 65px 75px 45px"};
+  height: 100%;
   width: 100%;
-  & > li {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 20px;
-  }
-  & > li:nth-of-type(1) {
-    margin-left: 90px;
-  }
-  & > li:nth-of-type(2) {
-    margin-left: 133px;
-  }
-  & > li:nth-of-type(3) {
-    margin-left: 117px;
-  }
-  & > li:nth-of-type(4) {
-    margin-left: 112px;
-  }
-  & > li:nth-of-type(5) {
-    margin-left: 89px;
-  }
+  justify-content: space-between;
 `;
 
 const List = styled.li`
+  display: flex;
+  height: 100%;
+  align-items: center;
   font-weight: 700;
   font-size: 12px;
   line-height: 20px;
@@ -113,35 +112,44 @@ const Name = styled.ul`
 `;
 
 const Specifications = styled.ul`
-  display: flex;
-  width: 740px;
+  display: grid;
+  grid-template-columns: ${(props) =>
+    props.location.pathname === "/channelmanage"
+      ? "80px 82px 70px 65px 75px 68px 68px"
+      : "90px 80px 70px 65px 75px 45px"};
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   & > li {
+    display: flex;
+    align-items: center;
     font-weight: 400;
     font-size: 11px;
+    height: 25px;
     line-height: 19px;
   }
-  & > li:nth-of-type(1) {
-    margin-left: 100px;
-  }
-  & > li:nth-of-type(2),
-  li:nth-of-type(3) {
-    margin-left: 98px;
-  }
-  & > li:nth-of-type(4) {
-    margin-left: 106px;
-  }
-  & > li:nth-of-type(5) {
-    margin-left: 54px;
-    color: ${(props) =>
-      props.checked === true ? "rgba(45, 165, 45, 1)" : "rgba(213, 0, 0, 1)"};
-  }
+`;
+const Condition = styled.li`
+  color: ${(props) =>
+    props.checked === true ? "rgba(45, 165, 45, 1)" : "rgba(213, 0, 0, 1)"};
+  background: rgba(250, 250, 250, 0.4);
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 9%);
+  border-radius: 4px;
+  width: 90%;
+  height: 25px;
+  justify-content: center;
 `;
 
 const Tools = styled.ul`
   display: flex;
   align-items: center;
-  width: 80px;
+  width: 100px;
   justify-content: center;
+  margin-right: 30px;
+  & > img {
+    cursor: pointer;
+  }
   & > img:nth-of-type(2) {
     padding: 0 15px;
   }
@@ -177,4 +185,6 @@ export {
   Tools,
   Topic,
   TopicWrapper,
+  Div,
+  Condition,
 };

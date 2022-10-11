@@ -10,14 +10,10 @@ import {
   Wrapper,
 } from "./style/warningModal";
 
-const WarningModal = () => {
-  const [deActive, setDeActive] = useState(false);
-  const closeModal = () => {
-    setDeActive(!setDeActive);
-  };
+const WarningModal = ({ isClicked, setIsClicked }) => {
   return (
     <>
-      {deActive === true ? (
+      {isClicked && (
         <WarningCard>
           <Icon>
             <Img src="/assets/img/Goar-icon.svg" alt="icon" />
@@ -29,10 +25,10 @@ const WarningModal = () => {
             ندارد!
           </Description>
           <Wrapper>
-            <Button onClick={closeModal}>تایید</Button>
+            <Button onClick={() => setIsClicked(false)}>تایید</Button>
           </Wrapper>
         </WarningCard>
-      ) : null}
+      )}
     </>
   );
 };

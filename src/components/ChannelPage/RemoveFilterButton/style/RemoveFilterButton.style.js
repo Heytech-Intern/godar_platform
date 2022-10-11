@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.button`
+const Container = styled.button` 
     min-width: 120px;
     height: 32px;
     margin-top : 8px;
@@ -9,7 +9,7 @@ const Container = styled.button`
     background: #F6F5F3;
     border: 1px solid rgba(62, 63, 68, 0.4);
     border-radius: 8px;
-    display : flex;
+    display : ${({toggle}) => toggle ? 'flex' : 'none' };
     align-items : center;
     justify-content : space-around;
     cursor : pointer;

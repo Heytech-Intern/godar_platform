@@ -62,6 +62,7 @@ const AddressWrap = styled(Wrap)`
 
 const ItemImg = styled.nav`
   display: flex;
+  cursor: pointer;
   direction: ltr;
   & > img:nth-of-type(1) {
     width: 85px;
@@ -78,6 +79,7 @@ const ItemImg = styled.nav`
 const Profile = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 const ItemText = styled.div`
@@ -106,6 +108,7 @@ const QuickMenu = styled.div`
 const Vector = styled.div`
   justify-content: center;
   width: 80px;
+  cursor: pointer;
   display: flex;
   @media (min-width: ${({ theme }) => theme.Device.pc}) {
     justify-content: start;

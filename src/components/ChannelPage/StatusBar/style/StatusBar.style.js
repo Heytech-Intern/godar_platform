@@ -9,14 +9,14 @@ const Container = styled.div`
     align-items : center;
     justify-content : center;
     margin-right : 24px;
-    min-width : 210px;
+    min-width : 260px;
 
     & > p{
         font-weight: 500;
         font-size: 12px;
         line-height: 20px;
+        padding : 8px 12px;
         color: rgba(62, 63, 68, 0.87);
-        margin-right : 12px;
         text-align : center;
         cursor: pointer;
     }

@@ -75,7 +75,7 @@ const FilterBody = styled.div`
   }
 
   & > section:last-of-type {
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     padding-top: 18px;
     border-top: 1px solid rgba(234, 234, 238, 0.4);

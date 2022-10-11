@@ -2,9 +2,9 @@ import React from 'react'
 import { Container } from './style/RemoveFilterButton.style'
 
 
-const RemoveFilterButton = ({children,click}) => {
+const RemoveFilterButton = ({children,click,toggle}) => {
   return (
-    <Container onClick={click} >{children}</Container>
+    <Container toggle={toggle} onClick={click} >{children}</Container>
   )
 }
 

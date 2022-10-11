@@ -11,9 +11,9 @@ const NavigationBar = () => {
   return (
     <Container>
       <Box>
-        <p className="text">نمایش 1 - 10 از 10</p>
+        <p className="text">نمایش ۱ - ۱۰ از ۱۰</p>
         <Select>
-          <p>10</p>
+          <p>۱۰</p>
           <img src="./assets/NavigationBar/down.svg" alt="" />
         </Select>
       </Box>
@@ -26,8 +26,8 @@ const NavigationBar = () => {
         <Skip>
           <img src="./assets/NavigationBar/right.svg" alt="" />
         </Skip>
-        <Active>1</Active>
-        <p className="box">2</p>
+        <Active>۱</Active>
+        <p className="box">۲</p>
         <p className="box">...</p>
         <Skip>
           <img src="./assets/NavigationBar/left.svg" alt="" />

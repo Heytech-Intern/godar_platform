@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-  float: left;
+  position: fixed;
+  left: 0;
   margin-top: 30px;
   display: flex;
   flex-flow: column;
@@ -26,6 +27,7 @@ const Box = styled.div`
   background: #f6f5f3;
   border-radius: 8px;
   margin-top: 6px;
+  cursor: pointer;
 `;
 
 export { Container, Box };
